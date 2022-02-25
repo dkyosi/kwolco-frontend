@@ -1,0 +1,38 @@
+<div class="page-content">
+    <mat-card>
+        <div class="form-container">
+            <div class="logo">
+                <h1>Edit Product</h1>
+            </div>
+            <form [formGroup]='productForm'>
+                <div *ngIf="isLoggin" align="center" style="padding-top: 10px;padding-bottom:30px;  display: flex; align-items: center;justify-content: center;">
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Product Name</mat-label>
+                    <input matInput placeholder="product_name" value="{{productData.product_name}}"  formControlName="product_name" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Number of Tonnes</mat-label>
+                    <input matInput placeholder="tones" value="{{productData.tones}}"  formControlName="tones" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Select</mat-label>
+                    <mat-select (selectionChange)="selectionChanged($event.value)">
+                        <mat-option *ngFor="let country of countries" [value]="country.country_id">
+                            {{ country.country_name }}
+                        </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Price Per KG</mat-label>
+                    <input matInput placeholder="price_per_kg" value="{{productData.price_per_kg}}" formControlName="price_per_kg" required>
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary"  (click)="updateProduct()">UPDATE</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>
+

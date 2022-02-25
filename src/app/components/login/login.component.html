@@ -1,0 +1,28 @@
+<div class="page-content">
+    <mat-card>
+        <div class="form-container">
+            <div class="logo">
+                <h1>Sign In</h1>
+            </div>
+            <form [formGroup]='loginForm'>
+                <div *ngIf="isLoggin" align="center" style="padding-top: 10px;padding-bottom:30px;  display: flex; align-items: center;justify-content: center;">
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your Username</mat-label>
+                    <input matInput placeholder="username"  formControlName="username" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter password</mat-label>
+                    <input matInput placeholder="password" formControlName="password" required>
+                </mat-form-field>
+                <div>
+                    <div>
+                        <p class="link-div">Don't have an Account? <a href="#" routerLink="/register">Register</a></p>
+                    </div>
+                    <button mat-raised-button color="primary"  (click)="userLogin()" [disabled]="!loginForm.valid">LOGIN</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

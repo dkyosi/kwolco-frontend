@@ -1,0 +1,61 @@
+mat-toolbar{
+    margin-top: 0px !important;
+}
+
+.top{
+    width: 100%;
+}
+
+.right{
+    float: right;
+    margin-right: 30px;
+    font-size: 30px;
+}
+
+.content{
+    padding: 20px;
+}
+
+.list-card{
+    padding: 30px;
+}
+
+.item{
+    margin-right: 60px;
+    width: 20%;
+    text-align: center;
+}
+
+.view-button,.edit-button,.delete-button{
+   background-color: rgb(48, 153, 29);
+   border: none;
+   width: 60px;
+   height: 30px;
+   padding-right: 10px;
+   padding-left: 10px;
+   border-radius: 8px;
+   color: white;
+   margin-right: 12px;
+   cursor: pointer;
+}
+.edit-button{
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+}
+.delete-button{
+    background-color: red;
+    color: white;
+}
+
+.add-button{
+    background-color: white;
+    border: 1px solid green;
+    color: green;
+    height: 30px;
+   padding-right: 10px;
+   padding-left: 10px;
+   border-radius: 8px;
+   margin-right: 12px;
+   cursor: pointer;
+}

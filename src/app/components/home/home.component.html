@@ -1,0 +1,50 @@
+<div>
+    <mat-toolbar>
+        <div class="top">
+            <span><a href="#" (click)="logout()">
+                    <mat-icon class="right">logout</mat-icon>
+                </a></span>
+                <div>
+                    <button style="float:right; margin-right: 50px;" class="add-button" (click)="addProduct()">Add New Product</button>
+                </div>
+        </div>
+    </mat-toolbar>
+
+
+    <div class="content">
+        
+        <mat-card class="list-card">
+            <mat-card-title style="text-align: center;">EXPORTS
+            </mat-card-title>
+            <mat-card-content>
+                
+                <mat-list>
+                    <mat-list-item>
+                        <span class="item">ID</span>
+                        <span class="item">NAME</span> 
+                        <span class="item">#TONNES</span> 
+                        <span class="item">PRICE/KG</span> 
+                        <span class="item">DATE</span> 
+                        <span class="item">ACTIONS</span> 
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item *ngFor="let product of products"> 
+                        <span class="item">{{product.product_id}}</span>
+                         <span class="item">{{product.product_name}}</span> 
+                         <span class="item">{{product.tones}}</span> 
+                         <span class="item">${{product.price_per_kg}}</span> 
+                         <span class="item">{{product.created_at}}</span> 
+                         <button class="view-button" (click)="showProduct(product)">View</button>
+                         <button class="edit-button" (click)="editProduct(product)">Edit</button>
+                         <button class="delete-button" (click)="deleteProduct(product)">Delete</button>
+
+                        </mat-list-item>
+                    <mat-divider></mat-divider>
+                </mat-list>
+            </mat-card-content>
+            <mat-card-footer>Exports List</mat-card-footer>
+        </mat-card>
+
+    </div>
+
+</div>

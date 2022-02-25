@@ -1,0 +1,36 @@
+<div class="page-content">
+    <mat-card>
+        <div class="form-container">
+            <div class="logo">
+                <h1>Sign Up</h1>
+            </div>
+            <form [formGroup]='registerForm'>
+                <div *ngIf="isLoggin" align="center" style="padding-top: 10px;padding-bottom:30px;  display: flex; align-items: center;justify-content: center;">
+                    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Username</mat-label>
+                    <input matInput placeholder="username"  formControlName="username" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Email</mat-label>
+                    <input matInput placeholder="email"  formControlName="email" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Phone</mat-label>
+                    <input matInput placeholder="phone"  formControlName="phone" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Password</mat-label>
+                    <input matInput placeholder="password" formControlName="password" required>
+                </mat-form-field>
+                <div>
+                    <div>
+                        <p class="link-div">Already have an Account? <a href="#" routerLink="/login">Login</a></p>
+                    </div>
+                    <button mat-raised-button color="primary"  (click)="registerUser()" [disabled]="!registerForm.valid">REGISTER</button>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>
