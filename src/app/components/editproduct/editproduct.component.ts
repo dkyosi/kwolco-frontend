@@ -39,8 +39,8 @@ export class EditproductComponent implements OnInit {
     this.restProvider.mainGet('products/'+id).subscribe(res=>{
       let r:any = []
       r = res
-      this.productData = r.product
-      console.log(this.productData)
+      this.productData = r.product_id
+      this.productForm = this.productData
     })
   }
 
