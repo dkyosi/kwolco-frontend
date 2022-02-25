@@ -5,6 +5,7 @@ import { EditproductComponent } from './components/editproduct/editproduct.compo
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ShowComponent } from './components/show/show.component';
 
 const routes: Routes = [
   
@@ -22,6 +23,8 @@ const routes: Routes = [
   },
   {
     path:'edit',component:EditproductComponent
+  },{
+    path:'show',component:ShowComponent
   }
 ];
 

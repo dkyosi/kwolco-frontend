@@ -39,7 +39,8 @@ export class HomeComponent implements OnInit {
 
   showProduct(product:any){
     console.log(product)
-    alert(JSON.stringify(product))
+    const queryParams = { product: product.product_id };
+     this.router.navigate(['/show'], { queryParams: queryParams });
   }
 
   editProduct(product:any){

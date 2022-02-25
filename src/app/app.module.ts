@@ -19,6 +19,7 @@ import {MatListModule} from '@angular/material/list';
 import { AddproductComponent } from './components/addproduct/addproduct.component';
 import { EditproductComponent } from './components/editproduct/editproduct.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ShowComponent } from './components/show/show.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
     RegisterComponent,
     HomeComponent,
     AddproductComponent,
-    EditproductComponent
+    EditproductComponent,
+    ShowComponent
   ],
   imports: [
     BrowserModule,

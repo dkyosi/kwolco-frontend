@@ -20,9 +20,9 @@ export class EditproductComponent implements OnInit {
   constructor(private restProvider: RestService,private route: ActivatedRoute,
     public formBuilder: FormBuilder,private router:Router) {
     this.productForm = formBuilder.group({
-      product_name: ['', Validators.compose([Validators.required])],
-      tones: ['', Validators.compose([Validators.required])],
-      price_per_kg: ['', Validators.compose([Validators.required])]
+      product_name: ['', Validators.compose([])],
+      tones: ['', Validators.compose([])],
+      price_per_kg: ['', Validators.compose([])]
     })
 
    }
@@ -37,10 +37,9 @@ export class EditproductComponent implements OnInit {
 
   getProduct(id:string){
     this.restProvider.mainGet('products/'+id).subscribe(res=>{
-      let r:any = []
-      r = res
-      this.productData = r.product_id
-      this.productForm = this.productData
+      let response:any = {}
+      response = res
+      this.productData = response.product
     })
   }
 

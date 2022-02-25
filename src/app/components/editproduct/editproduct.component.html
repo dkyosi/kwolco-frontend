@@ -10,11 +10,11 @@
                 </div>
                 <mat-form-field appearance="outline">
                     <mat-label>Enter Product Name</mat-label>
-                    <input matInput placeholder="product_name" value="{{productData.product_name}}"  formControlName="product_name" required>
+                    <input matInput  placeholder="product_name" [(ngModel)]="productData.product_name" value="{{productData.product_name}}"  formControlName="product_name" required>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Enter Number of Tonnes</mat-label>
-                    <input matInput placeholder="tones" value="{{productData.tones}}"  formControlName="tones" required>
+                    <input matInput placeholder="tones" [(ngModel)]="productData.tones" value="{{productData.tones}}"  formControlName="tones" required>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Select</mat-label>
@@ -26,10 +26,10 @@
                   </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label>Enter Price Per KG</mat-label>
-                    <input matInput placeholder="price_per_kg" value="{{productData.price_per_kg}}" formControlName="price_per_kg" required>
+                    <input matInput placeholder="price_per_kg" [(ngModel)]="productData.price_per_kg" value="{{productData.price_per_kg}}" formControlName="price_per_kg" required>
                 </mat-form-field>
                 <div>
-                    <button mat-raised-button color="primary"  (click)="updateProduct()">UPDATE</button>
+                    <button mat-raised-button color="primary"  (click)="updateProduct()"  [disabled]="!productForm.valid">UPDATE</button>
                 </div>
             </form>
         </div>
